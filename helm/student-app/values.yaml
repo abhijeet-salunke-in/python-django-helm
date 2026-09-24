@@ -1,0 +1,39 @@
+namespace:
+  name: student-app
+
+frontend:
+  replicaCount: 2
+
+  image:
+    repository: abhisalunke16/students-frontend
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  service:
+    type: NodePort
+    port: 80
+    nodePort: 30080
+
+backend:
+  replicaCount: 2
+
+  image:
+    repository: abhisalunke16/students-backend
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  service:
+    type: ClusterIP
+    port: 8000
+
+postgres:
+  image:
+    repository: postgres
+    tag: "16"
+
+  database: studentsdb
+  username: postgres
+  password: CHANGE_ME
+
+  service:
+    port: 5432

@@ -1,0 +1,11 @@
+apiVersion: v2
+
+name: student-app
+
+description: Helm chart for Python Django 3-Tier Student Management Application
+
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0.0"
